@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import {useEffect} from 'react';
 import axios from 'axios';
-
+// import { Button } from "@/components/ui/button"
+import {Button} from "@/components/ui/button"
 
 function App() {
   useEffect(() => {
@@ -21,7 +21,11 @@ function App() {
    });
   }, []);
 
-  return(<></>)
+  return(<>  <h1 class="text-3xl font-bold underline">
+  Hello world!
+</h1>
+  <Button>Test</Button>
+</>)
 }
 
 export default App;
