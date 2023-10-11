@@ -14,10 +14,10 @@ Start on React Application
     CREATE-REACT-APP
     Add Shad CN
     Outline App
+        login page
         Home page 
         checkout page 
         item page 
-        login page
         nav bar 
    
 BONUS:

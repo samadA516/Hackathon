@@ -10,6 +10,7 @@ const  credsRouter = express.Router().get('/', (req, res) => {
     res.sendStatus(200)
 });
 
+
 async function run() {
   try {
     const database = client.db('HackathonDB');
@@ -28,3 +29,4 @@ async function run() {
 run().catch(console.dir);
 
 module.exports={credsRouter}
+

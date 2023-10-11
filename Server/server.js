@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const routers = require("./routes");
+const credsRouters = require("./routes");
+const itemsRouters = require("./itemsRouter.js");
 
-app.use ("/api/creds", routers.credsRouter)
+
+app.use ("/api/items", itemsRouters.itemsRouter)
+app.use ("/api/creds", credsRouters.credsRouter)
 app.listen(port, () => {
     console.log('Listening on port', port);
 });
