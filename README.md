@@ -12,13 +12,17 @@ Create node server
 
 Start on React Application
     CREATE-REACT-APP
+    Test server request
     Add Shad CN
+    Add routes
+    Add auth
     Outline App
         login page
         Home page 
         checkout page 
         item page 
         nav bar 
+    Create Views
    
 BONUS:
     Logos
