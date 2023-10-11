@@ -24,6 +24,6 @@ Start on React Application
         nav bar 
     Create Views
    
-BONUS:
+BONUS:B
     Logos
     Hosting
