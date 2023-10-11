@@ -1,5 +1,6 @@
 const express = require ('express')
 const  credsRouter = express.Router().get('/', (req, res) => {
-    res.status(200)
+    console.log("test")
+    res.sendStatus(200)
 });
 module.exports={credsRouter}
