@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import * as React from "react"
+import { useState, useEffect } from "react"
 import {
     Card,
     CardContent,
@@ -8,42 +8,32 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { useNavigate } from "react-router-dom";
 
-export function ItemCard() {
-
+export function ItemCard(itemProps) {
+    const [item, setItem] = useState();
+    useEffect(() => {
+        setItem(itemProps);
+      }, [itemProps])
     const navigate = useNavigate();
     const routeChange = () => {
-        navigate("/");
+        navigate(`/item/${item?.item.item}`);
     }
+    console.log(itemProps);
+    console.log(item?.item.item);
 
     return (
-        <div class="min-h-screen flex items-center justify-center theme-color">
-            <Card className="w-[350px]">
+            <Card className="w-[300px]">
                 <CardHeader>
-                    <CardTitle>Log in</CardTitle>
-                    <CardDescription>Don't have an account? Sign up here</CardDescription>
+                    <CardTitle>{item?.item.item}test</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <form>
-                        <div className="grid w-full items-center gap-4">
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Usename</Label>
-                                <Input id="username" placeholder="Usename" />
-                            </div>
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Password</Label>
-                                <Input type="password"  id="password" placeholder="Password" />
-                            </div>
-                        </div>
-                    </form>
+                    <img width="100" src="cow.png"/>
                 </CardContent>
-                <CardFooter className="flex justify-center">
-                    <Button onClick={() => routeChange()}>Login</Button>
+                <CardFooter className="flex justify-between">
+                    <Button variant="outline" onClick={() => routeChange()}>Add to Cart</Button>
+                    <Button onClick={() => routeChange()}>Details</Button>
                 </CardFooter>
             </Card>
-        </div>
     )
 }
