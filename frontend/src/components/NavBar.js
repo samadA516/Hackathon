@@ -8,8 +8,7 @@ export function MainNav(
 ) {
     const navigate = useNavigate();
     const routeChange = () => {
-        navigate("/login");
-        console.log("Logout");
+        navigate("/");
     }
 
     return (
@@ -17,25 +16,28 @@ export function MainNav(
             <nav
                 className={cn("flex items-center space-x-4 lg:space-x-6", className)}
                 {...props}
-            >   
+            >
                 <img src="./cow.png" width="60px" alt="Description of the image" />
-                <p className="grow">
+                <p
+                    className="grow"
+                    onClick={() => routeChange()}
+                >
                     The Milk Road
                 </p>
                 <Link
                     href="/examples/dashboard"
-                    style={{margiinRight: "10px"}}
+                    style={{ margiinRight: "10px" }}
                     className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                     to="/cart"
-                >   
+                >
                     Cart
                 </Link>
                 <Link
                     href="/examples/dashboard"
-                    style={{marginRight: "10px"}}
+                    style={{ marginRight: "10px" }}
                     className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                     to="/login"
-                >   
+                >
                     Logout
                 </Link>
             </nav>
