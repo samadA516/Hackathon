@@ -18,7 +18,7 @@ export function MainNav(
                 className={cn("flex items-center space-x-4 lg:space-x-6", className)}
                 {...props}
             >   
-                <img src="./cow.png" width="70px" alt="Description of the image" />
+                <img src="./cow.png" width="60px" alt="Description of the image" />
                 <p className="grow">
                     The Milk Road
                 </p>
