@@ -20,7 +20,7 @@ export function Login() {
     }
 
     return (
-        <div class="min-h-screen flex items-center justify-center">
+        <div class="min-h-screen flex items-center justify-center theme-color">
             <Card className="w-[350px]">
                 <CardHeader>
                     <CardTitle>Log in</CardTitle>
@@ -31,17 +31,17 @@ export function Login() {
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="name">Usename</Label>
-                                <Input id="username" placeholder="Name of your project" />
+                                <Input id="username" placeholder="Usename" />
                             </div>
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="name">Password</Label>
-                                <Input id="password" placeholder="Name of your project" />
+                                <Input type="password"  id="password" placeholder="Password" />
                             </div>
                         </div>
                     </form>
                 </CardContent>
                 <CardFooter className="flex justify-center">
-                    <Button variant="outline" onClick={() => routeChange()}>Login</Button>
+                    <Button onClick={() => routeChange()}>Login</Button>
                 </CardFooter>
             </Card>
         </div>
