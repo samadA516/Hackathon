@@ -1,9 +1,7 @@
-import './App.css';
-// import axios from 'axios';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-const Login = () => {
+export const SignUp = () => {
     // Make the Axios GET request
     //  axios.get(apiUrl)
     //    .then((response) => {
@@ -19,9 +17,7 @@ const Login = () => {
         <>
             <Input />
             <Input />
-            <Button>Test</Button>
+            <Button>Sign up</Button>
         </>
     )
 }
-
-export default Login;
