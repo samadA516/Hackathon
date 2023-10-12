@@ -21,6 +21,9 @@ export const Home = () => {
         <>
             <MainNav />
             <div className="m-5">
+                <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-5">
+                    The Milk Road
+                </h1>
                 <Input
                     placeholder="Search for a product"
                     className="w-1/2"

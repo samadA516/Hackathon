@@ -17,12 +17,11 @@ export function MainNav(
                 className={cn("flex items-center space-x-4 lg:space-x-6", className)}
                 {...props}
             >
-                <img src="./cow.png" width="60px" alt="Description of the image" onClick={() => routeChange()} />
+                <img src="cow.png" width="60px" alt="Description of the image" onClick={() => routeChange()} />
                 <p
-                    className="grow"
                     onClick={() => routeChange()}
+                    className="grow"
                 >
-                    The Milk Road
                 </p>
                 <Link
                     href="/examples/dashboard"

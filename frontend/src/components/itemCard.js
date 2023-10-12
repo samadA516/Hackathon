@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
@@ -14,26 +13,24 @@ export function ItemCard(itemProps) {
     const [item, setItem] = useState();
     useEffect(() => {
         setItem(itemProps);
-      }, [itemProps])
+    }, [itemProps])
     const navigate = useNavigate();
     const routeChange = () => {
         navigate(`/item/${item?.item.item}`);
     }
-    console.log(itemProps);
-    console.log(item?.item.item);
 
     return (
-            <Card className="w-[300px]">
-                <CardHeader>
-                    <CardTitle>{item?.item.item}test</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <img width="100" src="cow.png"/>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                    <Button variant="outline" onClick={() => routeChange()}>Add to Cart</Button>
-                    <Button onClick={() => routeChange()}>Details</Button>
-                </CardFooter>
-            </Card>
+        <Card className="w-[300px]">
+            <CardHeader>
+                <CardTitle>{item?.item.item.replace(/([A-Z])/g, ' $1').trim()}</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <img width="100" src="cow.png" />
+            </CardContent>
+            <CardFooter className="flex justify-between">
+                <Button variant="outline" >Add to Cart</Button>
+                <Button onClick={() => routeChange()}>Details</Button>
+            </CardFooter>
+        </Card>
     )
 }
