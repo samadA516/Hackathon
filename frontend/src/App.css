@@ -81,3 +81,24 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+.cart-button-group {
+  width: 20%;
+  display: grid;
+ 
+}
+
+.table1, .table2 {
+  flex:1;
+
+}
+.cartContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.buttonSpaced{
+  padding: 5px;
+  margin: 5px
+}
