@@ -10,6 +10,9 @@ import {
     CardTitle,
 
 } from "@/components/ui/card";
+import { Link } from "react-router-dom"
+import background from "../background-milk.png";
+
 
 export const SignUp = () => {
     // Make the Axios GET request
@@ -24,11 +27,12 @@ export const SignUp = () => {
     //    });
 
     return (
-        <> <div class="min-h-screen flex items-center justify-center theme-color">
+        <div style={{ backgroundImage: `url(${background})` }}>
+         <div class="min-h-screen flex items-center justify-center theme-color">
             <Card className="w-[350px]">
                 <CardHeader>
                     <CardTitle>Sign Up</CardTitle>
-                    <CardDescription>Already have an account? Click here</CardDescription>
+                    <CardDescription>Already have an account?<Link to="/login"> Click here</Link></CardDescription>
                 </CardHeader>
                 <CardContent>
                     <div className="flex flex-col space-y-1.5">
@@ -50,6 +54,6 @@ export const SignUp = () => {
                 </CardFooter>
             </Card>
         </div>
-        </>
+        </div>
     )
 }
