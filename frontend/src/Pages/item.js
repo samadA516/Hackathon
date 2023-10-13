@@ -26,8 +26,8 @@ export const Item = () => {
     }, []);
 
     const navigate = useNavigate();
-    const routeChange = () => {
-        navigate(`/`);
+    const handleNavigate = (route) => {
+        navigate(`../${route}`, { replace: true });
     }
 
     return (
@@ -35,12 +35,12 @@ export const Item = () => {
             <MainNav />
             <div className="m-5">
                 <h1
-                    className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+                    className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center"
                     style={{ marginBottom: "50px" }}
                 >
                     {itemProps.item?.replace(/([A-Z])/g, ' $1').trim()}
                 </h1>
-                <div className="flex">
+                <div className="flex justify-center">
                     <img src="cow.png" width="400" />
                     <Card className="w-[300px]">
                         <CardHeader>
@@ -58,7 +58,7 @@ export const Item = () => {
                         </CardFooter>
                     </Card>
                 </div>
-                <Button onClick={() => routeChange()} >Keep Shopping</Button>
+                <Button onClick={() => handleNavigate("/")} >Keep Shopping</Button>
                 <h2 className="scroll-m-2 text-3xl font-semibold tracking-tight transition-colors mt-5 first:mt-0">
                     Related Products
                 </h2>
@@ -67,7 +67,7 @@ export const Item = () => {
                         ["Yogurt", "Butter", "Cheese", "Parmesan"].map((item) => (
                             <Card 
                                 className="w-[300px] mt-5"
-                                
+                                onClick={() => handleNavigate(`/item/${item}`)}
                             >
                                 <p className="leading-7 [&:not(:first-child)]:mt-6 text-center" style={{height: "50px", padding: "10px"}}>{item}</p>
                             </Card>

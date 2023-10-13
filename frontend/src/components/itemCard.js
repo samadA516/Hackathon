@@ -17,6 +17,7 @@ export function ItemCard(itemProps) {
     const navigate = useNavigate();
     const routeChange = () => {
         navigate(`/item/${item?.item.item}`);
+        setItem({});
     }
 
     return (
