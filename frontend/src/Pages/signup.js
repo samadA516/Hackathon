@@ -13,7 +13,6 @@ import {
 import { Link } from "react-router-dom"
 import background from "../background-milk.png";
 
-
 export const SignUp = () => {
     // Make the Axios GET request
     //  axios.get(apiUrl)
