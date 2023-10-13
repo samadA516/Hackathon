@@ -29,7 +29,7 @@ export const Home = () => {
                 />
                 <div className="displa-block mt-5">
                     <div className="flex display-flex flex-row gap-4 flex-wrap">
-                        {items.length>0 &&
+                        {items.length > 0 &&
                             items.map((item) => <ItemCard item={item} />)
                         }
                     </div>

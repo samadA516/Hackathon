@@ -15,6 +15,7 @@ export const Item = () => {
     const [itemProps, setItemProps] = useState([]);
 
     const { item } = useParams();
+
     useEffect(() => {
         axios.get(`api/items/${item}`)
             .then((response) => {
@@ -23,7 +24,11 @@ export const Item = () => {
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
-    }, []);
+    }, [item]);
+
+    useEffect(() => {
+        console.log("Route parameter changed", { item });
+    }, [item]);
 
     const navigate = useNavigate();
     const handleNavigate = (route) => {
@@ -33,7 +38,7 @@ export const Item = () => {
     return (
         <>
             <MainNav />
-            <div className="m-5">
+            <div className="m-5" key={item}>
                 <h1
                     className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center"
                     style={{ marginBottom: "50px" }}
@@ -64,7 +69,7 @@ export const Item = () => {
                 </h2>
                 <div className="flex flex-row gap-1">
                     {
-                        ["Yogurt", "Butter", "Cheese", "Parmesan"].map((item) => (
+                        ["Yogurt", "Butter", "Cream", "Parmesan"].map((item) => (
                             <Card 
                                 className="w-[300px] mt-5"
                                 onClick={() => handleNavigate(`/item/${item}`)}
