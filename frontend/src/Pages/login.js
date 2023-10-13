@@ -30,7 +30,7 @@ export function Login() {
                     <form>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Usename</Label>
+                                <Label htmlFor="name">Username</Label>
                                 <Input id="username" placeholder="Usename" />
                             </div>
                             <div className="flex flex-col space-y-1.5">

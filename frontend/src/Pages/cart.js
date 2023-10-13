@@ -1,12 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MainNav } from "../components/NavBar";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -14,43 +11,47 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 
+
 export const Cart = () => {
+  const [items, setItems] = useState([]);
+  
+  const navigate = useNavigate();
+  const routeChange = () => {
+      navigate("/");
+  }
+
   useEffect(() => {
-    axios.get("api/items")
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
+    axios.get("api/Cart")
+    .then((response) => {
+      console.log(response.data);
+      setItems(response.data);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
       });
   }, []);
-
-let grid = 5;
   
-    const navigate = useNavigate();
-    const routeChange = () => {
-        navigate("/");
-    }
-
-
-  const itemData = [
-    { name: "milk",  price: "$10", rating: 2, fancy: 4},
-    { name: "not-milk",  price: "$20", rating: 4, fancy: 5}
-  ]
   return (
     <>
       <MainNav />
       <div className="cartContainer"> 
-      <Card className="w-[800px]">
+      <Card className="w-[800px] theme-color">
       <CardHeader>
         <CardTitle>My shopping cart</CardTitle>
         </CardHeader>
       <Table>
         <TableBody>
-          {itemData.map((item, index) => <TableRow>
-            <TableCell><img src="./cow.png" width='60px'/></TableCell>
-            <TableCell>{item.name}</TableCell>
-            <TableCell>{item.price}</TableCell>
+          <TableRow>
+            <TableCell></TableCell>
+            <TableCell>Product Name</TableCell>
+            <TableCell>Price</TableCell>
+            <TableCell>Rating (out of 5)</TableCell>
+            <TableCell>Fanciness (out of 5)</TableCell>
+          </TableRow>
+          {items?.map((item, index) => <TableRow key={index}> 
+            <TableCell><img src="./cow.png" width='60px' alt="issa picture"/></TableCell>
+            <TableCell>{item.item}</TableCell>
+            <TableCell>${item.price}</TableCell>
             <TableCell>{item.rating}</TableCell>
             <TableCell>{item.fancy}</TableCell>
           </TableRow>)}
@@ -63,10 +64,10 @@ let grid = 5;
         </CardHeader>
       <Table>
         <TableBody>
-          {itemData.map((item, index) => <TableRow>
-            <TableCell>{item.name}</TableCell>         
+           {items.map((item, index) => (<TableRow>
+            <TableCell>{item.item}</TableCell>         
             <TableCell>{item.rating}</TableCell>
-          </TableRow>)}
+          </TableRow>))} 
           </TableBody>
       </Table>
       </Card>
@@ -77,5 +78,7 @@ let grid = 5;
       </div>
       cart
     </>
-  )
-}
+  );
+};
+
+export default Cart;
