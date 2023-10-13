@@ -76,7 +76,6 @@ export const Cart = () => {
       <Button className = "buttonSpaced">Checkout</Button>
       <Button className = "buttonSpaced" onClick={() => routeChange()}>Keep Shopping</Button>
       </div>
-      cart
     </>
   );
 };
