@@ -121,7 +121,27 @@ export const Cart = () => {
                   </Label>
                   <Input
                     id="username"
-                    defaultValue="@peduarte"
+                    defaultValue="123 Real Address Ave"
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="credit card" className="text-left">
+                    Credit Card
+                  </Label>
+                  <Input
+                    id="username"
+                    defaultValue="1234-5678-9102"
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="credit card" className="text-left">
+                    Security Code
+                  </Label>
+                  <Input
+                    id="username"
+                    defaultValue="123"
                     className="col-span-3"
                   />
                 </div>

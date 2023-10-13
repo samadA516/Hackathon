@@ -29,7 +29,7 @@ export function ItemCard(itemProps) {
                 <img width="100" src={`${item?.item.item}.webp`} />
             </CardContent>
             <CardFooter className="flex justify-between">
-                <Button variant="outline" >Add to Cart</Button>
+                <Button variant="outline" onClick = {() => alert('Item added to cart!')} >Add to Cart</Button>
                 <Button onClick={() => routeChange()}>Details</Button>
             </CardFooter>
         </Card>
