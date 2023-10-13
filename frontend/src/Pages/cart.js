@@ -33,8 +33,8 @@ export const Cart = () => {
   
   return (
     <>
-      <MainNav />
-      <div className="cartContainer"> 
+      <MainNav  />
+      <div className="cartContainer "> 
       <Card className="w-[800px] theme-color">
       <CardHeader>
         <CardTitle>My shopping cart</CardTitle>

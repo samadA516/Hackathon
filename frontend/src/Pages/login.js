@@ -11,6 +11,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useNavigate } from "react-router-dom";
+import background from "../background-milk.png";
+import { Link } from "react-router-dom"
 
 export function Login() {
 
@@ -20,11 +22,12 @@ export function Login() {
     }
 
     return (
+        <div style={{ backgroundImage: `url(${background})` }}>
         <div class="min-h-screen flex items-center justify-center theme-color">
             <Card className="w-[350px]">
                 <CardHeader>
                     <CardTitle>Log in</CardTitle>
-                    <CardDescription>Don't have an account? Sign up here</CardDescription>
+                    <CardDescription>Don't have an account?<Link to="/signup"> Sign up here</Link></CardDescription>
                 </CardHeader>
                 <CardContent>
                     <form>
@@ -44,6 +47,7 @@ export function Login() {
                     <Button onClick={() => routeChange()}>Login</Button>
                 </CardFooter>
             </Card>
+        </div>
         </div>
     )
 }
