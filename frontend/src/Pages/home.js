@@ -9,7 +9,6 @@ export const Home = () => {
     useEffect(() => {
         axios.get("api/items")
             .then((response) => {
-                console.log(response.data);
                 setItems(response.data);
             })
             .catch((error) => {
