@@ -60,7 +60,7 @@ export const Item = () => {
                             <p className="leading-7 [&:not(:first-child)]:mt-6">Lactose levels: 8</p>
                         </CardContent>
                         <CardFooter className="flex justify-between">
-                            <Button >Add to Cart</Button>
+                            <Button onClick = {() => alert('Item added to cart!')}  >Add to Cart</Button>
                         </CardFooter>
                     </Card>
                 </div>
