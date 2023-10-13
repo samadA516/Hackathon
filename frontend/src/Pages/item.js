@@ -47,7 +47,7 @@ export const Item = () => {
                     {itemProps.item?.replace(/([A-Z])/g, ' $1').trim()}
                 </h1>
                 <div className="flex justify-center">
-                    <img src="cow.png" width="400" />
+                    <img width="400px" src={`${itemProps?.item}.webp`} className="mr-3" />
                     <Card className="w-[300px]">
                         <CardHeader>
                             {/* <CardTitle>card ittle</CardTitle> */}

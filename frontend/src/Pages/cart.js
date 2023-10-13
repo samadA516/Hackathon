@@ -60,7 +60,9 @@ export const Cart = () => {
                   <TableCell>Fanciness (out of 5)</TableCell>
                 </TableRow>
                 {items?.map((item, index) => <TableRow key={index}>
-                  <TableCell><img src="./cow.png" width='60px' alt="issa picture" /></TableCell>
+                  <TableCell>
+                    <img width="60px" src={`${item.item}.webp`} />
+                  </TableCell>
                   <TableCell>{item.item}</TableCell>
                   <TableCell>${item.price.toString()[0]}.{item.price?.toString()[1]}{item.price?.toString()[2]}
                   </TableCell>
