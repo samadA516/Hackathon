@@ -23,31 +23,31 @@ export function Login() {
 
     return (
         <div style={{ backgroundImage: `url(${background})` }}>
-        <div class="min-h-screen flex items-center justify-center theme-color">
-            <Card className="w-[350px]">
-                <CardHeader>
-                    <CardTitle>Log in</CardTitle>
-                    <CardDescription>Don't have an account?<Link to="/signup"> Sign up here</Link></CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <form>
-                        <div className="grid w-full items-center gap-4">
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Username</Label>
-                                <Input id="username" placeholder="Usename" />
+            <div class="min-h-screen flex items-center justify-center theme-color">
+                <Card className="w-[350px]">
+                    <CardHeader>
+                        <CardTitle>Log in</CardTitle>
+                        <CardDescription>Don't have an account?<Link to="/signup"> Sign up here</Link></CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <form>
+                            <div className="grid w-full items-center gap-4">
+                                <div className="flex flex-col space-y-1.5">
+                                    <Label htmlFor="name">Username</Label>
+                                    <Input id="username" placeholder="Usename" />
+                                </div>
+                                <div className="flex flex-col space-y-1.5">
+                                    <Label htmlFor="name">Password</Label>
+                                    <Input type="password" id="password" placeholder="Password" />
+                                </div>
                             </div>
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Password</Label>
-                                <Input type="password"  id="password" placeholder="Password" />
-                            </div>
-                        </div>
-                    </form>
-                </CardContent>
-                <CardFooter className="flex justify-center">
-                    <Button onClick={() => routeChange()}>Login</Button>
-                </CardFooter>
-            </Card>
-        </div>
+                        </form>
+                    </CardContent>
+                    <CardFooter className="flex justify-center">
+                        <Button onClick={() => routeChange()}>Login</Button>
+                    </CardFooter>
+                </Card>
+            </div>
         </div>
     )
 }

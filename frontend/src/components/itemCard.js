@@ -26,7 +26,7 @@ export function ItemCard(itemProps) {
                 <CardTitle>{item?.item.item.replace(/([A-Z])/g, ' $1').trim()}</CardTitle>
             </CardHeader>
             <CardContent>
-                <img width="100" src="cow.png" />
+                <img width="100" src={`${item?.item.item}.webp`} />
             </CardContent>
             <CardFooter className="flex justify-between">
                 <Button variant="outline" onClick = {() => alert('Item added to cart!')} >Add to Cart</Button>
